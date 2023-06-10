@@ -27,44 +27,64 @@ import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React base styles
 import typography from "assets/theme/base/typography";
+import Box from "@mui/material/Box";
 
 function Footer({ light }) {
   const { size } = typography;
 
   return (
-    <MDBox position="absolute" width="100%" bottom={0} py={4}>
-      <Container>
+    <MDBox position="absolute" width="100%" bottom={0}>
+      <MDBox
+        width="50%"
+        display="flex"
+        flexDirection={{ xs: "column", lg: "row" }}
+        alignItems="center"
+        mt={-4}
+      >
         <MDBox
           width="100%"
           display="flex"
-          flexDirection={{ xs: "column", lg: "row" }}
-          justifyContent="space-between"
+          justifyContent="flex-start"
           alignItems="center"
-          px={1.5}
+          flexWrap="wrap"
+          color="text"
+          fontSize={size.sm}
+          mx={1}
         >
-          <MDBox
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexWrap="wrap"
-            color={light ? "white" : "text"}
-            fontSize={size.sm}
-          >
-            &copy; {new Date().getFullYear()}, made with
-            <MDBox fontSize={size.md} color={light ? "white" : "dark"} mb={-0.5} mx={0.25}>
-              <Icon color="inherit" fontSize="inherit">
-                favorite
-              </Icon>
-            </MDBox>
-            by
-            <Link href="https://www.creative-tim.com/" target="_blank">
-              <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
-                &nbsp;Creative Tim&nbsp;
-              </MDTypography>
-            </Link>
-            for a better web.
+          &copy;
+          <MDTypography variant="button" fontWeight="medium" color="text">
+            TBR Infra Private Limited
+          </MDTypography>
+        </MDBox>
+        <MDBox
+          width="100%"
+          display="flex"
+          justifyContent="flex-end"
+          alignItems="center"
+          flexWrap="wrap"
+          color="text"
+          fontSize={size.sm}
+          mx={1}
+        >
+          {new Date().getFullYear()}, made with
+          <MDBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
+            <Icon color="inherit" fontSize="inherit">
+              favorite
+            </Icon>
           </MDBox>
-          <MDBox
+          by
+          <Link href="https://altzentech.com/" target="_blank">
+            <MDTypography
+              variant="button"
+              fontWeight="medium"
+              color="#e7481f"
+              style={{ color: "#e7481f" }}
+            >
+              &nbsp;Altzen&nbsp;
+            </MDTypography>
+          </Link>
+        </MDBox>
+        {/* <MDBox
             component="ul"
             sx={({ breakpoints }) => ({
               display: "flex",
@@ -82,52 +102,32 @@ function Footer({ light }) {
             })}
           >
             <MDBox component="li" pr={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/" target="_blank">
+              <Link href="https://altzentech.com" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  Creative Tim
+                  Altzen
                 </MDTypography>
               </Link>
             </MDBox>
             <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/presentation" target="_blank">
-                <MDTypography
-                  variant="button"
-                  fontWeight="regular"
-                  color={light ? "white" : "dark"}
-                >
+              <Link href="https://altzentech.com/about-us" target="_blank">
+                <MDTypography variant="button" fontWeight="regular" color="#e7481f">
                   About Us
                 </MDTypography>
               </Link>
             </MDBox>
             <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/blog" target="_blank">
-                <MDTypography
-                  variant="button"
-                  fontWeight="regular"
-                  color={light ? "white" : "dark"}
-                >
-                  Blog
+              <Link href="https://altzentech.com/services-and-solutions" target="_blank">
+                <MDTypography variant="button" fontWeight="regular" color="#e7481f">
+                  Services & Solutions
                 </MDTypography>
               </Link>
             </MDBox>
-            <MDBox component="li" pl={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/license" target="_blank">
-                <MDTypography
-                  variant="button"
-                  fontWeight="regular"
-                  color={light ? "white" : "dark"}
-                >
-                  License
-                </MDTypography>
-              </Link>
-            </MDBox>
-          </MDBox>
-        </MDBox>
-      </Container>
+          </MDBox> */}
+      </MDBox>
     </MDBox>
   );
 }
