@@ -126,6 +126,12 @@ const routes = [
     route: "/logs",
     component: <Logs />,
   },
+  {
+    type: "route",
+    key: "dash",
+    route: "/dash",
+    component: <Dashboard />,
+  },
 ];
 
 export default routes;

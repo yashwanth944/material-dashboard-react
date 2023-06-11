@@ -62,7 +62,6 @@ export default function data() {
 
   const Company = ({ image, name }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
-      <MDAvatar src={image} name={name} size="sm" />
       <MDTypography variant="button" fontWeight="medium" ml={1} lineHeight={1}>
         {name}
       </MDTypography>
@@ -71,7 +70,7 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "companies", accessor: "companies", width: "45%", align: "left" },
+      { Header: "operations", accessor: "operations", width: "45%", align: "left" },
       { Header: "members", accessor: "members", width: "10%", align: "left" },
       { Header: "budget", accessor: "budget", align: "center" },
       { Header: "completion", accessor: "completion", align: "center" },
@@ -79,7 +78,7 @@ export default function data() {
 
     rows: [
       {
-        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        operations: <Company image={logoXD} name="Plaza Operations" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -92,7 +91,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            Rs. 14,000
           </MDTypography>
         ),
         completion: (
@@ -102,7 +101,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoAtlassian} name="Add Progress Track" />,
+        operations: <Company image={logoAtlassian} name="Traffic Management" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -113,7 +112,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $3,000
+            Rs. 3,000
           </MDTypography>
         ),
         completion: (
@@ -123,7 +122,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSlack} name="Fix Platform Errors" />,
+        operations: <Company image={logoSlack} name="Utility Management" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -144,7 +143,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSpotify} name="Launch our Mobile App" />,
+        operations: <Company image={logoSpotify} name="Security Services" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -157,7 +156,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $20,500
+            Rs. 20,500
           </MDTypography>
         ),
         completion: (
@@ -167,7 +166,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoJira} name="Add the New Pricing Page" />,
+        operations: <Company image={logoJira} name="Control Room operations" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([[team4, "Jessica Doe"]])}
@@ -175,7 +174,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $500
+            Rs. 500
           </MDTypography>
         ),
         completion: (
@@ -185,7 +184,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoInvesion} name="Redesign New Online Shop" />,
+        operations: <Company image={logoInvesion} name="Route Patrolling & Safety" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -196,7 +195,7 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $2,000
+            Rs. 2,000
           </MDTypography>
         ),
         completion: (
