@@ -1,22 +1,7 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -37,50 +22,43 @@ import MDButton from "components/MDButton";
 
 // Authentication layout components
 import BasicLayout from "layouts/authentication/components/BasicLayout";
+import React from "react";
+import { Container, TextField, Button, Box, Typography } from "@mui/material";
+import Footer from "layouts/authentication/components/Footer";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import coverImage from "assets/images/cover.svg";
+import tbrlogo from "assets/images/tbrlogo.svg";
 
-function Basic() {
+// function Basic() {
+//   const [rememberMe, setRememberMe] = useState(false);
+
+//   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+const LoginPage = () => {
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
-
+  const navigate = useNavigate();
   return (
-    <BasicLayout image={bgImage}>
-      <Card>
-        <MDBox
-          variant="gradient"
-          bgColor="info"
-          borderRadius="lg"
-          coloredShadow="info"
-          mx={2}
-          mt={-3}
-          p={2}
-          mb={1}
-          textAlign="center"
-        >
-          <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            Sign in
-          </MDTypography>
-          <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
-            <Grid item xs={2}>
-              <MDTypography component={MuiLink} href="#" variant="body1" color="white">
-                <FacebookIcon color="inherit" />
-              </MDTypography>
-            </Grid>
-            <Grid item xs={2}>
-              <MDTypography component={MuiLink} href="#" variant="body1" color="white">
-                <GitHubIcon color="inherit" />
-              </MDTypography>
-            </Grid>
-            <Grid item xs={2}>
-              <MDTypography component={MuiLink} href="#" variant="body1" color="white">
-                <GoogleIcon color="inherit" />
-              </MDTypography>
-            </Grid>
-          </Grid>
-        </MDBox>
+    <BasicLayout image={coverImage} tbrlogo={tbrlogo}>
+      <Card sx={{ width: "50%", marginTop: "-3rem" }}>
+        <Box p={2} mx={2} mt={-3} mb={1} borderRadius="md" textAlign="center">
+          <Box borderRadius="lg" sx={{ bgcolor: "#fff" }}>
+            <Typography
+              variant="h4"
+              fontWeight="medium"
+              sx={{
+                background: "linear-gradient(89.79deg, #E51956 0.18%, #79478E 99.84%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Login
+            </Typography>
+          </Box>
+        </Box>
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
@@ -102,9 +80,21 @@ function Basic() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="info" fullWidth>
+              <Button
+                variant="gradient"
+                sx={{
+                  background: "#DB1C54",
+                  color: "#ffffff",
+                  padding: "0.5rem",
+                  "&:hover": {
+                    color: "red",
+                  },
+                }}
+                onClick={() => navigate("/vehiclelogs")}
+                fullWidth
+              >
                 sign in
-              </MDButton>
+              </Button>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text">
@@ -113,9 +103,9 @@ function Basic() {
                   component={Link}
                   to="/authentication/sign-up"
                   variant="button"
-                  color="info"
                   fontWeight="medium"
                   textGradient
+                  color="error"
                 >
                   Sign up
                 </MDTypography>
@@ -126,6 +116,5 @@ function Basic() {
       </Card>
     </BasicLayout>
   );
-}
-
-export default Basic;
+};
+export default LoginPage;

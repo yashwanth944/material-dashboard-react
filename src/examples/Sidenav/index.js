@@ -1,45 +1,25 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useEffect } from "react";
 
-// react-router-dom components
 import { useLocation, NavLink } from "react-router-dom";
 
-// prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-// @mui material components
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
-// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
 
-// Material Dashboard 2 React example components
 import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
+import Box from "@mui/material/Box";
 
-// Custom styles for the Sidenav
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 
-// Material Dashboard 2 React context
+import tbrlogo from "assets/images/tbrlogo.svg";
+
 import {
   useMaterialUIController,
   setMiniSidenav,
@@ -111,18 +91,17 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
     } else if (type === "title") {
       returnValue = (
         <MDTypography
-          key={key}
+          // key={key}
           color={textColor}
           display="block"
           variant="caption"
           fontWeight="bold"
           textTransform="uppercase"
-          pl={3}
           mt={2}
           mb={1}
           ml={1}
         >
-          {title}
+          TBR Infra
         </MDTypography>
       );
     } else if (type === "divider") {
@@ -141,11 +120,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   });
 
   return (
-    <SidenavRoot
-      {...rest}
-      variant="permanent"
-      ownerState={{ transparentSidenav, whiteSidenav, miniSidenav, darkMode }}
-    >
+    <SidenavRoot {...rest} variant="permanent" ownerState={{ whiteSidenav, miniSidenav, darkMode }}>
       <MDBox pt={3} pb={1} px={4} textAlign="center">
         <MDBox
           display={{ xs: "block", xl: "none" }}
@@ -160,17 +135,22 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
-        <MDBox component={NavLink} to="/" display="flex" alignItems="center">
-          {brand && <MDBox component="img" src={brand} alt="Brand" width="2rem" />}
-          <MDBox
-            width={!brandName && "100%"}
-            sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
-          >
-            <MDTypography component="h6" variant="button" fontWeight="medium" color={textColor}>
-              {brandName}
-            </MDTypography>
-          </MDBox>
-        </MDBox>
+
+        <Box
+          sx={{
+            backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+              tbrlogo &&
+              `${linearGradient(
+                rgba(gradients.dark.main, 0.0),
+                rgba(gradients.dark.state, 0.0)
+              )}, url(${tbrlogo})`,
+            backgroundSize: "contain",
+            backgroundPosition: "flex-start",
+            backgroundRepeat: "no-repeat",
+            height: "2.5rem",
+            position: "relative",
+          }}
+        />
       </MDBox>
       <Divider
         light={
@@ -179,19 +159,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         }
       />
       <List>{renderRoutes}</List>
-      <MDBox p={2} mt="auto">
-        <MDButton
-          component="a"
-          href="https://www.creative-tim.com/product/material-dashboard-pro-react"
-          target="_blank"
-          rel="noreferrer"
-          variant="gradient"
-          color={sidenavColor}
-          fullWidth
-        >
-          upgrade to pro
-        </MDButton>
-      </MDBox>
     </SidenavRoot>
   );
 }
