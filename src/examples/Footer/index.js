@@ -28,7 +28,7 @@ import MDTypography from "components/MDTypography";
 import typography from "assets/theme/base/typography";
 
 function Footer({ company, links }) {
-  const { href, name } = company;
+  const href = "https://altzentech.com/";
   const { size } = typography;
 
   const renderLinks = () =>
@@ -68,30 +68,10 @@ function Footer({ company, links }) {
         </MDBox>
         by
         <Link href={href} target="_blank">
-          <MDTypography variant="button" fontWeight="medium">
-            &nbsp;{name}&nbsp;
+          <MDTypography variant="button" fontWeight="medium" sx={{ color: "#e7471f" }}>
+            &nbsp;Altzen&nbsp;
           </MDTypography>
         </Link>
-        for a better web.
-      </MDBox>
-      <MDBox
-        component="ul"
-        sx={({ breakpoints }) => ({
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
-          listStyle: "none",
-          mt: 3,
-          mb: 0,
-          p: 0,
-
-          [breakpoints.up("lg")]: {
-            mt: 0,
-          },
-        })}
-      >
-        {renderLinks()}
       </MDBox>
     </MDBox>
   );

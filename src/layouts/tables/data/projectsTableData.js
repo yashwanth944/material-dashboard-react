@@ -35,7 +35,6 @@ import logoInvesion from "assets/images/small-logos/logo-invision.svg";
 export default function data() {
   const Project = ({ image, name }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
-      <MDAvatar src={image} name={name} size="sm" variant="rounded" />
       <MDTypography display="block" variant="button" fontWeight="medium" ml={1} lineHeight={1}>
         {name}
       </MDTypography>
@@ -55,7 +54,7 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "project", accessor: "project", width: "30%", align: "left" },
+      { Header: "operation", accessor: "operation", width: "30%", align: "left" },
       { Header: "budget", accessor: "budget", align: "left" },
       { Header: "status", accessor: "status", align: "center" },
       { Header: "completion", accessor: "completion", align: "center" },
@@ -64,10 +63,10 @@ export default function data() {
 
     rows: [
       {
-        project: <Project image={LogoAsana} name="Asana" />,
+        operation: <Project image={LogoAsana} name="Cleaning" />,
         budget: (
           <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $2,500
+            Rs. 2,500
           </MDTypography>
         ),
         status: (
@@ -83,10 +82,10 @@ export default function data() {
         ),
       },
       {
-        project: <Project image={logoGithub} name="Github" />,
+        operation: <Project image={logoGithub} name="Minor Repairs" />,
         budget: (
           <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $5,000
+            Rs. 5,000
           </MDTypography>
         ),
         status: (
@@ -102,10 +101,10 @@ export default function data() {
         ),
       },
       {
-        project: <Project image={logoAtlassian} name="Atlassian" />,
+        operation: <Project image={logoAtlassian} name="Gardening" />,
         budget: (
           <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $3,400
+            Rs. 3,400
           </MDTypography>
         ),
         status: (
@@ -121,10 +120,10 @@ export default function data() {
         ),
       },
       {
-        project: <Project image={logoSpotify} name="Spotify" />,
+        operation: <Project image={logoSpotify} name="Landscaping" />,
         budget: (
           <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $14,000
+            Rs. 14,000
           </MDTypography>
         ),
         status: (
@@ -140,10 +139,10 @@ export default function data() {
         ),
       },
       {
-        project: <Project image={logoSlack} name="Slack" />,
+        operation: <Project image={logoSlack} name="Signage Maintenance" />,
         budget: (
           <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $1,000
+            Rs. 1,000
           </MDTypography>
         ),
         status: (
@@ -159,10 +158,10 @@ export default function data() {
         ),
       },
       {
-        project: <Project image={logoInvesion} name="Invesion" />,
+        operation: <Project image={logoInvesion} name="Equipment Maintenance" />,
         budget: (
           <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $2,300
+            Rs. 2,300
           </MDTypography>
         ),
         status: (

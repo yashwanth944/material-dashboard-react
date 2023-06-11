@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -48,12 +33,12 @@ function Tables() {
                 py={3}
                 px={2}
                 variant="gradient"
-                bgColor="info"
+                bgColor="primary"
                 borderRadius="lg"
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Authors Table
+                  Current Shift
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
@@ -75,12 +60,12 @@ function Tables() {
                 py={3}
                 px={2}
                 variant="gradient"
-                bgColor="info"
+                bgColor="primary"
                 borderRadius="lg"
-                coloredShadow="info"
+                coloredShadow="primary"
               >
                 <MDTypography variant="h6" color="white">
-                  Projects Table
+                  Operational Schedule
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
