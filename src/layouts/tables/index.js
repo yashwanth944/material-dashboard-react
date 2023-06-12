@@ -38,7 +38,7 @@ function Tables() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Current Shift
+                  Today&apos;s Shift
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>

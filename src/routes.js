@@ -32,7 +32,7 @@ const routes = [
     key: "dashboard",
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
-    component: <Dash />,
+    component: <Dashboard />,
   },
 
   {
@@ -65,7 +65,7 @@ const routes = [
     key: "routine",
     icon: <Icon fontSize="small">manage_accounts</Icon>,
     route: "/routine",
-    component: <RoutineManagement />,
+    component: <Tables />,
   },
   {
     type: "collapse",
@@ -109,13 +109,6 @@ const routes = [
   },
   {
     type: "route",
-    key: "tables",
-    icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/tables",
-    component: <Tables />,
-  },
-  {
-    type: "route",
     key: "signin",
     route: "/signin",
     component: <SignIn />,
@@ -125,12 +118,6 @@ const routes = [
     key: "logs",
     route: "/logs",
     component: <Logs />,
-  },
-  {
-    type: "route",
-    key: "dash",
-    route: "/dash",
-    component: <Dashboard />,
   },
 ];
 

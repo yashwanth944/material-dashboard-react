@@ -90,7 +90,7 @@ const LoginPage = () => {
                     color: "red",
                   },
                 }}
-                onClick={() => navigate("/vehiclelogs")}
+                onClick={() => navigate("/dashboard")}
                 fullWidth
               >
                 sign in
